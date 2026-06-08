@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Virtual Fab Lab Tour — VR Developer project by Yatharth.">
+  <title>Virtual Fab Lab Tour | Yatharth</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header class="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="../index.html" class="nav__logo">Y.</a>
+      <button type="button" class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+      <ul class="nav__menu">
+        <li><a href="../index.html#experience" class="nav__link">Experience</a></li>
+        <li><a href="../index.html#projects" class="nav__link">Projects</a></li>
+        <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="project-detail">
+    <div class="container">
+      <a href="../index.html#projects" class="project-detail__back">← Back to Projects</a>
+      <h1 class="project-detail__title">
+        VR Developer
+        <img src="../images/icons/vr.png" alt="" class="project-detail__icon" width="40" height="40" aria-hidden="true">
+      </h1>
+      <h2 class="project-detail__sub-title project-detail__sub-title--page">Virtual Fab Lab Tour</h2>
+
+      <ul class="project-detail__tags project-detail__tags--page">
+        <li><span class="skill-tag">Unity</span></li>
+        <li><span class="skill-tag">Virtual Reality</span></li>
+        <li><span class="skill-tag">C#</span></li>
+        <li><span class="skill-tag">3D Modeling</span></li>
+      </ul>
+
+      <section class="project-detail__block" aria-labelledby="overview-two">
+        <h2 id="overview-two" class="project-detail__heading">Overview</h2>
+        <p class="project-detail__text">This project presents a Virtual Fabrication Lab (Fab Lab) Tour developed using virtual reality technologies. The system allows users to explore a fab lab environment interactively, similar to navigating through Google Maps. Users can experience a realistic layout of the lab without physically being present.</p>
+        <p class="project-detail__text">The platform integrates detailed 3D models of semiconductor manufacturing machines along with informative videos that demonstrate their functionality and purpose. This combination of visual and interactive elements enhances user understanding of complex fabrication processes.</p>
+        <p class="project-detail__text">The project serves as an effective application of virtual reality by providing remote access to specialized facilities that are typically restricted due to safety and operational constraints.</p>
+      </section>
+
+      <section class="project-detail__block" aria-labelledby="links-two">
+        <h2 id="links-two" class="project-detail__heading">Project video</h2>
+        <div class="project-detail__links">
+          <a href="https://www.youtube.com/watch?v=sa8F2NywoDs" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__text">&copy; <span id="year"></span> Yatharth. Built with HTML, CSS &amp; a bit of JS.</p>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

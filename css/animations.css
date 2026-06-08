@@ -1,0 +1,89 @@
+/* ============================================
+   Animation keyframes & classes
+   ============================================ */
+
+/* Hero entrance (page load) */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-on-load {
+  opacity: 0;
+  animation: fadeSlideUp var(--duration-slow) var(--ease-out) forwards;
+}
+
+.animate-on-load--delay-1 {
+  animation-delay: 0.1s;
+}
+
+.animate-on-load--delay-2 {
+  animation-delay: 0.2s;
+}
+
+.animate-on-load--delay-3 {
+  animation-delay: 0.35s;
+}
+
+/* Scroll reveal (triggered by JS .is-visible) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity var(--duration-slow) var(--ease-out),
+              transform var(--duration-slow) var(--ease-out);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children (e.g. project cards) */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--duration-slow) var(--ease-out),
+              transform var(--duration-slow) var(--ease-out);
+}
+
+.reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 0s; }
+.reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 0.08s; }
+.reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 0.16s; }
+.reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 0.24s; }
+.reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 0.32s; }
+.reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 0.4s; }
+
+.reveal-stagger.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero__float-orbit--vr {
+    animation-duration: 28s;
+  }
+
+  .hero__float-orbit--game {
+    animation-duration: 32s;
+  }
+
+  .hero__float-orbit--arduino {
+    animation-duration: 36s;
+  }
+
+  .animate-on-load,
+  .reveal,
+  .reveal-stagger > * {
+    opacity: 1;
+    transform: none;
+    animation: none;
+    transition: none;
+  }
+}
