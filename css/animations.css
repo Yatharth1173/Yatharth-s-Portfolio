@@ -2,6 +2,104 @@
    Animation keyframes & classes
    ============================================ */
 
+/* Splash preloader: cursive signature writes itself, then panels slide apart */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: preloaderDone 0s linear 3.8s forwards;
+}
+
+.preloader__panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50.2%;
+  background: var(--color-bg);
+  z-index: 1;
+}
+
+.preloader__panel--top {
+  top: 0;
+  animation: panelSlideUp 0.8s var(--ease-in-out) 3s forwards;
+}
+
+.preloader__panel--bottom {
+  bottom: 0;
+  animation: panelSlideDown 0.8s var(--ease-in-out) 3s forwards;
+}
+
+.preloader__inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: preloaderFade 0.4s ease 2.95s forwards;
+}
+
+.preloader__sign {
+  width: min(36rem, 85vw);
+  height: auto;
+  overflow: visible;
+}
+
+.preloader__sign-text {
+  font-family: "Dancing Script", cursive;
+  font-size: 150px;
+  font-weight: 700;
+  fill: var(--color-accent);
+  fill-opacity: 0;
+  stroke: var(--color-accent);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-dasharray: 2400;
+  stroke-dashoffset: 2400;
+  animation: signDraw 2.2s var(--ease-in-out) 0.3s forwards,
+             signFill 0.7s ease 2.2s forwards;
+}
+
+@keyframes signDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes signFill {
+  to {
+    fill-opacity: 1;
+  }
+}
+
+@keyframes preloaderFade {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes panelSlideUp {
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes panelSlideDown {
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes preloaderDone {
+  to {
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
 /* Hero entrance (page load) */
 @keyframes fadeSlideUp {
   from {
@@ -66,6 +164,10 @@
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
+  .preloader {
+    display: none;
+  }
+
   .hero__float-orbit--vr {
     animation-duration: 28s;
   }
